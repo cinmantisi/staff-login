@@ -6,7 +6,7 @@ const ms = require('ms')
 module.exports = {
     name : 'staff-login',
     category : 'info',
-    description : 'Bahis oyunu',
+    description : 'staff log',
 
     run : async(client, message, args) => {
         if(cooldown.has(message.author.id)) {
@@ -19,14 +19,14 @@ module.exports = {
                 host: `localhost`,
                 user: `root`,
                 password: `pass`,
-                database: `habbo`
+                database: `ur database name`
             })
 
             var transporter = nodemailer.createTransport({
               service: 'gmail',
               auth: {
-                user: 'ulaumeer123@gmail.com',
-                pass: 'ruykjctlfzynazvm'
+                user: 'ur email',
+                pass: 'ur pass key'
               }
             });
 
@@ -35,9 +35,9 @@ module.exports = {
                     console.log(err)
 
                 } else if (habbo[0] == undefined) {
-                    message.channel.send("Böyle bir hesap bulamadım..")
+                    message.channel.send("I can't find ur account..")
                 } else if (habbo[0].rank < 5) {
-                    message.channel.send('Hmm.. Görünüşe göre bu bir personel hesabı değil.')
+                    message.channel.send('Whoops. looks like thats not a staff account')
                 } else {
                                      const dogrulamakodu = Math.floor(Math.random() * 1000000)
                                     const embed = new MessageEmbed()
