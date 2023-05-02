@@ -5,7 +5,7 @@ const ms = require('ms')
 module.exports = {
     name : 'staff-login-onay',
     category : 'info',
-    description : 'Bahis oyunu',
+    description : 'staff log verification',
 
     run : async(client, message, args) => {
         if(cooldown.has(message.author.id)) {
@@ -31,7 +31,7 @@ module.exports = {
                 const embed = new MessageEmbed()
                 .setColor('GREEN')
                 .setTitle('Başarılı')
-                .setDescription('Kullanabileceğiniz komutları görmek için lütfen "staff-help" komutunu kullanın.')
+                .setDescription('Giriş yapıldı.')
                 .addField('Giriş yapılan hesap', habbo[0].username)
                 message.channel.send(embed)
                 const dogrulamakodu = Math.floor(Math.random() * 1000000)
